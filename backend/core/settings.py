@@ -16,7 +16,8 @@ SECRET_KEY = config("SECRET_KEY", default="secret_key1711")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['4002-103-85-9-158.ngrok-free.app', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
@@ -28,12 +29,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-     #     My apps
+    #     My apps
     "app",
     "rest_framework",
     "rest_framework.authtoken",
     'dj_rest_auth',
-    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'corsheaders',
@@ -51,7 +51,9 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-CORS_ORIGIN_WHITELIST = ["http://localhost:3000"]
+CORS_ORIGIN_WHITELIST = ["http://localhost:3000",
+                         'https://4002-103-85-9-158.ngrok-free.app']
+
 
 ROOT_URLCONF = "core.urls"
 
@@ -132,4 +134,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-APPEND_SLASH=False
+APPEND_SLASH = False
